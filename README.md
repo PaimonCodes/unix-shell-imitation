@@ -8,7 +8,8 @@ The shell is launched with `gcc -o wish wish.c -Wall -Werror`. The shell can sup
 where the user typically writes the commands themselves, or they can opt to use a text file to read commands from. 
 
 Use `./wish` to launch interactive mode, or use `./wish <file.txt>` to read commands from a file. 
-The shell will exit automatically regardless if exit is called or not in the text file.
+The shell will exit automatically regardless if exit is called or not in the text file. The text file should have an extra newline or return carriage at the end of 
+file for the read to work properly.
 
 ### Built-in commands
 `cd` allows for the shell user to change the current workspace directory, much like with the `cd` unix command that we all know and love.
@@ -22,9 +23,16 @@ The shell will exit automatically regardless if exit is called or not in the tex
 Each shell command is given a separate child process to run on. This is extremely important in running external unix programs
 because they replace the current process when they execute.
 
-Additionaly, this allows commands to run concurrently with the `&` operator.
+Additionally, this allows commands to run concurrently with the `&` operator like in the first command entry in the example below.
+
+<div align="center">
+  
+  ![Screenshot 2023-10-28 173232](https://github.com/PaimonCodes/unix-shell-imitation/assets/104661175/cda10ce2-8a3b-4fc5-a94f-148bbf84d147)
+
+</div>
 
 ---
 ### Project Idea and Test Cases Source
 This project was based on Remzi Arpaci-Dusseau's OSTEP project series. 
 GitHub: https://github.com/remzi-arpacidusseau/ostep-projects/tree/master/processes-shell
+
