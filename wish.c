@@ -523,7 +523,7 @@ void cmd_process(char **buffer, int *count, int pipes[][2], pid_t children[], ch
     else
     {
         close(pipes[*count][1]);    // close write end pipe of parent
-
+        children[*count] = child;   // update child process list
         (*count)++;     // increment amount of command seen/executed
     }
 }
@@ -540,10 +540,8 @@ void cmd_parse_processes(char **buffer, char ***shell_path, int *num_path, FILE 
     token = strtok(*buffer, "&");
     while (token != NULL)
     {
-        char* token_copy = strdup(token);
-        remove_lead_and_trailing_whitespaces(&token_copy);
-        cmd_process(&token_copy, &command_count, pipes, children, shell_path, num_path, fp);
-        deallocate_string(&token_copy);
+        remove_lead_and_trailing_whitespaces(&token);
+        cmd_process(&token, &command_count, pipes, children, shell_path, num_path, fp);
         token = strtok(NULL, "&");
     }
 
