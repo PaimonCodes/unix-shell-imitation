@@ -27,7 +27,7 @@ Additionally, this allows commands to run concurrently with the `&` operator lik
 
 <div align="center">
   
-  ![Screenshot 2023-10-28 173232](https://github.com/PaimonCodes/unix-shell-imitation/assets/104661175/cda10ce2-8a3b-4fc5-a94f-148bbf84d147)
+  ![Screenshot 2023-10-28 173232](https://github.com/PaimonCodes/unix-shell-imitation/assets/104661175/1aa2223d-75c1-4fd7-8630-1d2b6598dac9)
 
 </div>
 
